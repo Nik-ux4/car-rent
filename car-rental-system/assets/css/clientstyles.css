@@ -1,0 +1,507 @@
+
+/* ====== Reset & Base ====== */
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #f4f6f8;
+    margin: 0;
+    padding: 0;
+    color: #1a202c;
+}
+
+a {
+    text-decoration: none;
+    color: #3182ce;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    margin: 0;
+}
+/* ==============================
+   CLIENT DASHBOARD HEADER STYLES
+============================== */
+
+.client-header {
+    width: 100%;
+    background: #fff;
+    border-bottom: 1px solid #e2e8f0;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    font-family: 'Inter', sans-serif;
+}
+
+.header-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0.5rem 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+/* Logo */
+.header-left .logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #1f2937;
+    text-decoration: none;
+}
+
+/* Navigation */
+.header-nav {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.header-nav .nav-link {
+    text-decoration: none;
+    color: #1f2937;
+    padding: 0.5rem 0.75rem;
+    border-radius: 0.25rem;
+    transition: all 0.2s;
+}
+
+.header-nav .nav-link:hover,
+.header-nav .nav-link.active {
+    background-color: #e0f2fe;
+    color: #0369a1;
+}
+
+/* Dropdown */
+.nav-dropdown {
+    position: relative;
+}
+
+.nav-dropdown .dropdown-content {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: #fff;
+    min-width: 200px;
+    border: 1px solid #e2e8f0;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    z-index: 10;
+    border-radius: 0.25rem;
+}
+
+.nav-dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown-content a {
+    display: block;
+    padding: 0.5rem 1rem;
+    color: #1f2937;
+    text-decoration: none;
+    transition: background 0.2s;
+}
+
+.dropdown-content a:hover {
+    background-color: #e0f2fe;
+}
+
+/* Header Right */
+.header-right {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.header-right .welcome-text {
+    font-weight: 500;
+    color: #1f2937;
+}
+
+.header-right .btn-logout {
+    text-decoration: none;
+    padding: 0.4rem 0.8rem;
+    border-radius: 0.25rem;
+    background-color: #ef4444;
+    color: #fff;
+    font-weight: 500;
+    transition: background 0.2s;
+}
+
+.header-right .btn-logout:hover {
+    background-color: #dc2626;
+}
+
+/* Hamburger Menu (Mobile) */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    border: none;
+    background: none;
+    cursor: pointer;
+}
+
+.hamburger span {
+    width: 25px;
+    height: 3px;
+    background: #1f2937;
+    border-radius: 2px;
+    display: block;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+    .header-nav {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: #fff;
+        flex-direction: column;
+        display: none;
+        border-bottom: 1px solid #e2e8f0;
+    }
+
+    .header-nav.open {
+        display: flex;
+    }
+
+    .nav-dropdown .dropdown-content {
+        position: relative;
+        top: 0;
+        border: none;
+        box-shadow: none;
+    }
+
+    .hamburger {
+        display: flex;
+    }
+
+    .header-right {
+        display: none;
+    }
+
+    .header-right.active {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+        margin-top: 0.5rem;
+    }
+}
+
+/* ====== Dashboard Main Container ====== */
+.dashboard-main {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+}
+
+/* ====== Stats Cards ====== */
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.stat-card {
+    background-color: #fff;
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+    text-align: center;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.stat-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+}
+
+.stat-card h2 {
+    font-size: 0.9rem;
+    color: #718096;
+    margin-bottom: 0.5rem;
+}
+
+.stat-card p {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #2d3748;
+}
+
+/* ====== Upcoming Bookings ====== */
+.upcoming-bookings {
+    background-color: #fff;
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+
+.upcoming-bookings h2 {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+}
+
+.upcoming-bookings ul {
+    list-style-type: disc;
+    padding-left: 1.5rem;
+}
+
+.upcoming-bookings li {
+    margin-bottom: 0.5rem;
+}
+
+/* ====== Bookings Table ====== */
+.bookings-table {
+    background-color: #fff;
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+
+.bookings-table h2 {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+}
+
+.bookings-table table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.bookings-table th,
+.bookings-table td {
+    padding: 0.75rem 1rem;
+    border-bottom: 1px solid #e2e8f0;
+    text-align: left;
+}
+
+.bookings-table th {
+    background-color: #f7fafc;
+    font-weight: 600;
+    font-size: 0.9rem;
+    color: #4a5568;
+}
+
+.bookings-table tr:hover {
+    background-color: #edf2f7;
+    transition: background-color 0.2s ease;
+}
+
+/* ====== Status Badges ====== */
+span[class*='bg-'] {
+    padding: 0.25rem 0.5rem;
+    border-radius: 9999px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    display: inline-block;
+}
+
+/* Colors for badges */
+.bg-yellow-100 { background-color: #fefcbf; color: #92400e; }
+.bg-green-100 { background-color: #d1fae5; color: #065f46; }
+.bg-gray-100  { background-color: #e5e7eb; color: #1f2937; }
+.bg-red-100   { background-color: #fee2e2; color: #991b1b; }
+.bg-red-200   { background-color: #fecaca; color: #7f1d1d; }
+
+/* ====== Responsive ====== */
+@media (max-width: 768px) {
+    .stats-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .bookings-table th, .bookings-table td {
+        font-size: 0.8rem;
+        padding: 0.5rem;
+    }
+
+    .upcoming-bookings h2, .bookings-table h2 {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .stats-grid {
+        grid-template-columns: 1fr;
+    }
+}
+/* ================================
+   Filters Section
+================================ */
+.filters-card {
+    background-color: #ffffff;
+    padding: 1rem 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    margin-bottom: 2rem;
+}
+
+.filters-form {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+}
+
+.filters-form input[type="text"],
+.filters-form select {
+    padding: 10px 12px;
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+    font-size: 0.95rem;
+    flex: 1;
+    min-width: 150px;
+}
+
+.filters-form button {
+    background-color: #2563eb;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 0.95rem;
+    transition: background 0.3s ease;
+}
+
+.filters-form button:hover {
+    background-color: #1d4ed8;
+}
+
+/* ================================
+   Cars Grid
+================================ */
+.cars-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 1.5rem;
+}
+
+/* ================================
+   Car Card
+================================ */
+.car-card {
+    background-color: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.2s ease;
+}
+
+.car-card:hover {
+    transform: translateY(-3px);
+}
+
+/* Car Image */
+.car-image {
+    position: relative;
+    width: 100%;
+    height: 160px;
+    overflow: hidden;
+}
+
+.car-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Availability Badge */
+.badge-unavailable {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background-color: #ef4444;
+    color: #fff;
+    padding: 5px 10px;
+    font-size: 0.8rem;
+    font-weight: 500;
+    border-radius: 5px;
+}
+
+/* Car Details */
+.car-details {
+    padding: 1rem;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.car-details h3 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #111827;
+    margin-bottom: 0.3rem;
+}
+
+.car-meta {
+    font-size: 0.9rem;
+    color: #6b7280;
+    margin-bottom: 1rem;
+}
+
+/* Car Footer: Price + Button */
+.car-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.price {
+    font-weight: 600;
+    font-size: 1rem;
+    color: #111827;
+}
+
+.btn-secondary {
+    background-color: #10b981;
+    color: #fff;
+    padding: 6px 12px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: background 0.3s ease;
+}
+
+.btn-secondary:hover {
+    background-color: #059669;
+}
+
+.btn-disabled {
+    background-color: #9ca3af;
+    color: #fff;
+    padding: 6px 12px;
+    border-radius: 6px;
+    font-size: 0.9rem;
+    cursor: not-allowed;
+}
+
+/* Empty State */
+.empty-state {
+    text-align: center;
+    font-size: 1rem;
+    color: #6b7280;
+    padding: 2rem 0;
+}
+
+/* ================================
+   Responsive
+================================ */
+@media (max-width: 768px) {
+    .filters-form {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .car-image {
+        height: 140px;
+    }
+}
+
